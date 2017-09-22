@@ -1,21 +1,21 @@
 <?php
 
-$content = '';
+$map = '';
 $cache_file = '/tmp/map.txt';
 if (file_exists($cache_file)) {
 	$mtime = filemtime($cache_file);
 	if ($mtime > time() - 10) {
 		echo "Use cached\n";
-		$content = file_get_contents($cache_file);
+		$map = file_get_contents($cache_file);
 	} else {
 		echo "Cache expired\n";
 	}
 }
 
-if ($content === '') {
+if ($map === '') {
 	echo "Create and cache\n";
-	$content = 'Banan: ' . time();
-	file_put_contents($cache_file, $content);
+	$map = 'Banan: ' . time();
+	file_put_contents($cache_file, $map);
 }
 
-echo "$content\n";
+echo "$map\n";
