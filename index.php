@@ -14,7 +14,7 @@ if (file_exists($cache_file)) {
 
 if ($content === '') {
 	echo "Create and cache\n";
-	$content = 'banan';
+	$content = 'Banan: ' . time();
 	file_put_contents($cache_file, $content);
 }
 
